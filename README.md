@@ -1,2 +1,2 @@
-# Fsharp-And-Infer.net
+# Fsharp-and-infer.NET
 F# and Infer.net resources
