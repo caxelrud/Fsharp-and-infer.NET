@@ -256,10 +256,8 @@ with pm.Model() as m4_1:
 *)
 let mu_var=0.43**2.0 //0.1849
 let mu_prec=1.0/mu_var //5.408328826
-
 let sd_var=0.29**2.0 //0.0841
 let sd_prec=1.0/sd_var //11.89060642
-
 let prec_mu=1.0/(7.77**2.0) //0.01656372313
 //let prec_sd= 1.0/0.29 //3.448275862
 //let prec_var=1.0/0.0841 //141.3865211
@@ -271,16 +269,15 @@ mu:   (154.60,0.43,0.185,5.4)
 sd:   (7.77  ,0.29,0.0841,11.89)
 prec= (0.01656,3.44,11.89,0.0841)
 *)
-
 let mu =  Variable.GaussianFromMeanAndPrecision(178.0, 1.0/(20.0**2.0)).Named("mu") 
 let prec =  Variable.GammaFromShapeAndScale(1.0, 1.0).Named("prec") 
 
-let R= Range(l)
-let height = Variable.AssignVariableArray 
+let R= Range(L_18)
+let height_18 = Variable.AssignVariableArray 
                     (Variable.Array<float>(R))  
                      R (fun d -> Variable.GaussianFromMeanAndPrecision(mu,prec))
-height.ObservedValue <- Height    
-height.Name<-"height"
+height_18.ObservedValue <- Height_18    
+height_18.Name<-"height_18"
 
 let engine = InferenceEngine()
 engine.ShowFactorGraph<-false
